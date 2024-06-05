@@ -4,6 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radar-Radar & Africastalking Integration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .notification-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .notification-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <h1>Radar-Radar & Africastalking Integration</h1>
@@ -53,53 +112,6 @@
                 alert('Failed to send notification. Please try again later.');
             });
         });
-    </script>
-</body>
-</html>
-<br>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radar-Radar & Africastalking Integration</title>
-</head>
-<body>
-    <h1>Radar-Radar & Africastalking Integration</h1>
-    <p>This is a demo of how Radar-Radar and Africastalking can be integrated to send real-time notifications.</p>
-
-    <button onclick="sendNotification()">Send Notification</button>
-
-    <script>
-        // Function to send notification using Africastalking API
-        function sendNotification() {
-            // Assuming you have an API endpoint to send notifications
-            var apiUrl = "https://api.africastalking.com/notifications/send";
-            var apiKey = "your_api_key"; // Replace with your Africastalking API key
-            var message = "Hello from Radar-Radar! This is a test notification.";
-
-            // Make a POST request to the Africastalking API
-            fetch(apiUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'apiKey': apiKey
-                },
-                body: JSON.stringify({
-                    message: message,
-                    recipients: ['+254123456789'] // Replace with recipient phone number
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Notification sent:', data);
-                alert('Notification sent successfully!');
-            })
-            .catch(error => {
-                console.error('Error sending notification:', error);
-                alert('Failed to send notification. Please try again later.');
-            });
-        }
     </script>
 </body>
 </html>
