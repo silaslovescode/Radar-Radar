@@ -107,3 +107,68 @@
     </div>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On-Screen Keyboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .keyboard-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .key {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="keyboard-container">
+        <div class="key" onclick="appendToOutput('A')">A</div>
+        <div class="key" onclick="appendToOutput('B')">B</div>
+        <div class="key" onclick="appendToOutput('C')">C</div>
+        <!-- Add more keys here -->
+        <!-- For example: -->
+        <!-- <div class="key" onclick="appendToOutput('D')">D</div> -->
+        <!-- <div class="key" onclick="appendToOutput('E')">E</div> -->
+        <!-- ... -->
+        <div class="key" onclick="backspace()">Backspace</div>
+        <div class="key" onclick="clearOutput()">Clear</div>
+    </div>
+    <input type="text" id="output" placeholder="Type here...">
+    
+    <script>
+        function appendToOutput(character) {
+            document.getElementById('output').value += character;
+        }
+
+        function backspace() {
+            var value = document.getElementById('output').value;
+            document.getElementById('output').value = value.substring(0, value.length - 1);
+        }
+
+        function clearOutput() {
+            document.getElementById('output').value = '';
+        }
+    </script>
+</body>
+</html>
