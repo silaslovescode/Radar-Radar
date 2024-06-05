@@ -63,6 +63,24 @@
         .notification-button:hover {
             background-color: #0056b3;
         }
+        .container1 {
+            position: relative;
+            width: 100%;
+            height: 600px; /* Adjust the height as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+             /* background-color:#ffd700;  semi-transparent black */
+            z-index: 2; /* ensures it's above the iframe */
+            pointer-events: none; /* allow clicks to pass through */
+        }
     </style>
 </head>
 <body>
